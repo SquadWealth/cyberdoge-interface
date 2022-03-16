@@ -1,12 +1,11 @@
 
 body {
   margin: 0;
-  font-family: 'Supermercado One', 'Oxygen',
+  font-family: 'Fredoka', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0B0F1C;
 }
 
 code {

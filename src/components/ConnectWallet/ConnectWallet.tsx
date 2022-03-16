@@ -5,21 +5,28 @@ import { shortenAddress } from '../../utils/web3';
 import { useWalletModalToggle, useModalOpen } from '../../state/application/hooks';
 import { ApplicationModal } from '../../state/application/actions';
 
+const Container = styled.div`
+  display: flex;
+`;
+
 const ConnectWalletButton = styled.button`
-  background: transparent;
+  font-family: 'Fredoka', san-serif;
+  background: #f640fe8f;
   box-shadow: none;
-  font-family: 'Press Start 2P';
-  border: 1px solid #56CCF2;
+  border: none;
   border-radius: 8px;
   color: #f2f2f2;
-  padding: 12px;
-  font-size: 12px;
+  height: 48px;
+  width: 200px;
+  border-radius: 30px;
+  font-size: 18px;
   cursor: pointer;
+  margin: auto;
 `;
 
 const Web3WalletDisplay = styled.div`
+  font-family: 'Fredoka', san-serif;
   background: #56CCF2;
-  font-family: 'Press Start 2P';
   color: #f2f2f2;
   border: none;
   border-radius: 8px;
@@ -58,7 +65,7 @@ export const ConnectWallet = () => {
   }
 
   return (
-    <div>
+    <Container>
       {walletModalOpen ? (
         <ConnectWalletButton>
           ...loading
@@ -77,6 +84,6 @@ export const ConnectWallet = () => {
       ))}
 
       {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>} */}
-    </div>
+    </Container>
   )
 }
