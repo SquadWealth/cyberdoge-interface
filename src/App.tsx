@@ -5,7 +5,6 @@ import { Header } from './components/Header/Header';
 import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
 import PlanckCat from './assets/planck-cat.png';
-import { ShellTerminal } from './components/ShellTerminal/ShellTerminal';
 
 export const AppWrapper = styled.div`
   background-color: ${({theme}) => theme.bg1};
@@ -47,8 +46,6 @@ function App() {
             {/* <ImgWrapper>
               <img src={PlanckCat} />
             </ImgWrapper> */}
-            
-            <ShellTerminal />
           </>
         )}
       </Body>
