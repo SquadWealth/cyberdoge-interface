@@ -48,19 +48,11 @@ export const ConnectWallet = () => {
 
   if (accountData) {
     return (
-      // <div>
-      //   <img src={accountData?.ens?.avatar ?? undefined} alt="ENS Avatar" />
-      //   <div>
-      //     {accountData.ens?.name
-      //       ? `${accountData.ens?.name} (${accountData.address})`
-      //       : accountData.address}
-      //   </div>
-      //   <div>Connected to {accountData?.connector?.name}</div>
-      //   <button onClick={disconnect}>Disconnect</button>
-      // </div>
-      <Web3WalletDisplay>
-        {shortenAddress(accountData.address)}
-      </Web3WalletDisplay>
+      <Container>
+        <ConnectWalletButton>
+          {shortenAddress(accountData.address)}
+        </ConnectWalletButton>
+      </Container>
     )
   }
 
@@ -75,15 +67,6 @@ export const ConnectWallet = () => {
           Connect Wallet
         </ConnectWalletButton>
       )}
-
-      {/* {connectData.connectors.map((x) => (
-        <button disabled={!x.ready} key={x.id} onClick={() => connect(x)}>
-          {x.name}
-          {!x.ready && ' (unsupported)'}
-        </button>
-      ))}
-
-      {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>} */}
     </Container>
   )
 }

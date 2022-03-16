@@ -38,15 +38,13 @@ function App() {
       <Header />
       <Body>
         { accountData ? (
-          <TEXT.StandardBody m={'auto'}>
-            This wallet does not currently hold a PlanckCat.
-          </TEXT.StandardBody>
+          <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
+            You have already minted a CyberDoge. Aroo!
+          </TEXT.BoldHeader1>
         ):(
-          <>
-            {/* <ImgWrapper>
-              <img src={PlanckCat} />
-            </ImgWrapper> */}
-          </>
+          <TEXT.StandardHeader1 m={'auto'}>
+            CyberDoge Mint Page
+          </TEXT.StandardHeader1>
         )}
       </Body>
     </AppWrapper>
