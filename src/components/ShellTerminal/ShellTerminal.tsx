@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import "./ShellTerminal.css";
-import PlanckCat from "../../assets/planck-cat.png"
+import CyberDoge from "../../assets/cyberdoge-icon.png"
 // @ts-nocheck
 
 const Tab = styled.div`
@@ -53,7 +53,7 @@ export const ShellTerminal = () => {
       </Line>
 
       <ImgWrapper>
-        <img src={PlanckCat} />
+        <img src={CyberDoge} />
       </ImgWrapper>
 
       <Line>
