@@ -2,33 +2,28 @@ import { useState, useEffect } from "react";
 import styled from 'styled-components/macro';
 import { useModalOpen, useWalletModalToggle } from "../../state/application/hooks";
 import { ApplicationModal } from "../../state/application/actions";
+import { Icon } from "../Icon/Icon";
 import { TEXT } from "../../theme/theme";
 import { useConnect, useAccount } from "wagmi";
 import Modal from "../Modal/Modal";
 import MetaMaskLogo from "../../assets/metamask-icon.png";
 
-const IconWrapper = styled.div`
-  display: flex;
-  height: 16px;
-  width: 16px;
-`
-
 const ProviderSelectionButton = styled.button`
   display: flex;
-  background: transparent; 
-  border: 1px solid #56CCF2;
+  background: #f640fe66; 
+  border: 3px solid #f640fe8f;
   border-radius: 8px;
   color: #f2f2f2;
   font-size: 12px;
   cursor: pointer;
   padding: 12px;
   width: 100%;
-  font-family: 'Press Start 2P';
+  font-family: 'Fredoka', san-serif;
   margin-top: 12px;
 
   ${({ theme }) => theme.mediaWidth.minSmall`
     :hover, :active {
-      background: #56CCF2;
+      background: #f640fe8f;
     }
   `}
 `;
@@ -72,9 +67,9 @@ export default function ConnectWalletModal() {
   return (
     <Modal isOpen={walletModalOpen} onDismiss={toggleWalletModal} minHeight={false} maxHeight={90}>
       <ModalContentContainer>
-        <TEXT.SmallBody>
-          Connect to a wallet
-        </TEXT.SmallBody>
+        <TEXT.BoldHeader1 color={'#f640fe8f'} textAlign={'center'} letterSpacing={'1px'}>
+          SELECT WALLET
+        </TEXT.BoldHeader1>
 
         {connectData.connectors.map((x) => (
           <ProviderSelectionButton 
@@ -83,13 +78,13 @@ export default function ConnectWalletModal() {
             onClick={() => connect(x)}
           >
             <SelectionContentContainer>
-            <IconWrapper>
-              <img src={MetaMaskLogo} />
-            </IconWrapper>
-            <TEXT.SmallBody m={"0 12px"}>
+            <Icon size={20}>
+              <img src={MetaMaskLogo} alt={'Metamask Icon'} />
+            </Icon>
+            <TEXT.StandardBody m={"0 12px"}>
               {x.name}
               {!x.ready && ' (unsupported)'}
-            </TEXT.SmallBody>
+            </TEXT.StandardBody>
             </SelectionContentContainer>
           </ProviderSelectionButton>
         ))}

@@ -34,13 +34,13 @@ export function colors(darkMode: boolean): Colors {
     black: '#000000',
 
     // text
-    text1: darkMode ? '#FFFFFF' : '#000000',
+    text1: darkMode ? '#f640fe8f' : '#000000',
     text2: '10DCB1',
     text3: '#0B0F1C',
     text4: '#12B4FF',
 
     // backgrounds
-    bg1: darkMode ? '#FFFFFF' : '#F7F7F7',
+    bg1: darkMode ? '#F2F2F2' : '#F7F7F7',
     bg2: darkMode ? '#F7F7F7' : '#0B0F1C',
     bg3: darkMode ? '#565A69' : '#edeef2',
 
@@ -84,27 +84,27 @@ export const TEXT = {
     return <TextWrapper fontWeight={400} fontSize={14} {...props} />
   },
   StandardHeader1(props: TextProps) {
-    return <TextWrapper fontSize={20} fontWeight={400} color={'white1'} {...props} />
+    return <TextWrapper fontSize={20} fontWeight={400} {...props} />
   },
   BoldHeader1(props: TextProps) {
-    return <TextWrapper fontSize={20} fontWeight={700} color={'white1'} {...props} />
+    return <TextWrapper fontSize={20} fontWeight={700} {...props} />
   },
   StandardBody(props: TextProps) {
-    return <TextWrapper fontSize={16} fontWeight={400} color={'white1'} {...props} />
+    return <TextWrapper fontSize={16} fontWeight={400} {...props} />
   },
   BoldStandardBody(props: TextProps) {
-    return <TextWrapper fontSize={16} fontWeight={700} color={'white1'} {...props} />
+    return <TextWrapper fontSize={16} fontWeight={700} {...props} />
   },
   SmallBody(props: TextProps) {
-    return <TextWrapper fontSize={14} fontWeight={400} color={'white1'} {...props} />
+    return <TextWrapper fontSize={14} fontWeight={400} {...props} />
   },
   BoldSmallBody(props: TextProps) {
-    return <TextWrapper fontSize={14} fontWeight={700} color={'white1'} {...props} />
+    return <TextWrapper fontSize={14} fontWeight={700} {...props} />
   },
   Supplemental(props: TextProps) {
-    return <TextWrapper fontSize={12} fontWeight={400} color={'white1'} {...props} />    
+    return <TextWrapper fontSize={12} fontWeight={400} {...props} />    
   },
   BoldSupplemental(props: TextProps) {
-    return <TextWrapper fontSize={12} fontWeight={700} color={'white1'} {...props} />    
+    return <TextWrapper fontSize={12} fontWeight={700} {...props} />    
   }
 }
