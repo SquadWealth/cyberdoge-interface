@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { ConnectWallet } from './components/ConnectWallet/ConnectWallet';
 import { Header } from './components/Header/Header';
+import { DynamicCarousel } from './components/DynamicCarousel/DynamicCarousel';
 import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
-import PlanckCat from './assets/planck-cat.png';
 
 export const AppWrapper = styled.div`
   background-color: ${({theme}) => theme.bg1};
@@ -19,13 +19,6 @@ const Body = styled.div`
   height: 500px;
   margin: 50px auto auto auto;
   flex: 1;
-`;
-
-const ImgWrapper = styled.div`
-  display: flex;
-  margin: auto;
-  height: 200px;
-  width: 200px;
 `;
 
 function App() {
@@ -46,6 +39,7 @@ function App() {
             CyberDoge Mint Page
           </TEXT.StandardHeader1>
         )}
+        <DynamicCarousel />
       </Body>
     </AppWrapper>
   );

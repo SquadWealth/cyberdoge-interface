@@ -68,7 +68,7 @@ export default function ConnectWalletModal() {
     <Modal isOpen={walletModalOpen} onDismiss={toggleWalletModal} minHeight={false} maxHeight={90}>
       <ModalContentContainer>
         <TEXT.BoldHeader1 color={'#f640fe8f'} textAlign={'center'} letterSpacing={'1px'}>
-          SELECT WALLET
+          Connect Wallet
         </TEXT.BoldHeader1>
 
         {connectData.connectors.map((x) => (
