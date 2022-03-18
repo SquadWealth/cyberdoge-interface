@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import TubbyCats from "../../assets/tubbycats.png";
 
 const Container = styled.div`
   display: block;
@@ -20,7 +21,7 @@ const Carousel = styled.img`
 export const DynamicCarousel = () => {
   return (
     <>
-      <Carousel />
+      <Carousel src={TubbyCats} />
     </>
   )
 }
