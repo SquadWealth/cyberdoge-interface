@@ -21,8 +21,8 @@ export const AppWrapper = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  height: 500px;
-  margin: 50px auto auto auto;
+  height: 100vh;
+  margin: auto auto auto auto;
   flex: 1;
 `;
 

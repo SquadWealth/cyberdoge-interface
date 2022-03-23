@@ -3,6 +3,7 @@ import TubbyCats from "../../assets/tubbycats.png";
 
 const Container = styled.div`
   display: block;
+  overflow-x: hidden !important;
 `;
 
 const Carousel = styled.img`
@@ -20,8 +21,8 @@ const Carousel = styled.img`
 
 export const DynamicCarousel = () => {
   return (
-    <>
+    <Container>
       <Carousel src={TubbyCats} />
-    </>
+    </Container>
   )
 }
