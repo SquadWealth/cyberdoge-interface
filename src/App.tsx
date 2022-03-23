@@ -7,23 +7,46 @@ import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
 import CyberDoge_Background from './assets/cyberdoge-bg.jpg';
 
-export const AppWrapper = styled.div`
-  background-color: ${({theme}) => theme.bg1};
+const AppWrapper = styled.div`
   height: 100%;
   min-height: 100vh;
   width: 100vw;
   max-width: 100vw;
-  background-size: cover;
-  background-image: url(${CyberDoge_Background});
-  background-repeat: no-repeat;
-`;
-
+  `;
+  
 const Body = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: auto auto auto auto;
   flex: 1;
+  background-size: cover;
+  background-image: url(${CyberDoge_Background});
+  background-repeat: no-repeat;
+`;
+
+const FloatingContainer = styled.div`
+  background-color: #ffe0fd;
+  padding: 16px;
+  width: 420px;
+  margin: auto auto auto auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MintButton = styled.button`
+  font-family: 'Fredoka', san-serif;
+  background: #f640fe8f;
+  box-shadow: none;
+  border: none;
+  border-radius: 8px;
+  color: #f2f2f2;
+  height: 48px;
+  width: 200px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: auto;
 `;
 
 function App() {
@@ -40,9 +63,14 @@ function App() {
             You have already minted a CyberDoge. Aroo!
           </TEXT.BoldHeader1>
         ):(
-          <TEXT.StandardHeader1 m={'auto'}>
-            CyberDoge Mint Page
-          </TEXT.StandardHeader1>
+          <FloatingContainer>
+            <TEXT.StandardHeader1 m={'auto auto 8px auto'}>
+              CYBERDOGE BY NARZ
+            </TEXT.StandardHeader1>
+            <MintButton>
+              MINT
+            </MintButton>
+          </FloatingContainer>
         )}
         <DynamicCarousel />
       </Body>

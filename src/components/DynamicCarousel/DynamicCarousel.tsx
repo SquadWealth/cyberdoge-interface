@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TubbyCats from "../../assets/tubbycats.png";
+import CyberDoge_Carousel from "../../assets/carousel.png";
 
 const Container = styled.div`
   display: block;
@@ -22,7 +22,7 @@ const Carousel = styled.img`
 export const DynamicCarousel = () => {
   return (
     <Container>
-      <Carousel src={TubbyCats} />
+      <Carousel src={CyberDoge_Carousel} />
     </Container>
   )
 }

@@ -10,7 +10,7 @@ const Container = styled.div`
   display: block;
   position: fixed;
   width: 100%;
-  background-color: #f640fe29;
+  background-color: #ffe0fd;
 `;
 
 const FlexRowContainer = styled.div`
