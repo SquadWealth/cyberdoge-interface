@@ -5,12 +5,17 @@ import { Header } from './components/Header/Header';
 import { DynamicCarousel } from './components/DynamicCarousel/DynamicCarousel';
 import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
+import CyberDoge_Background from './assets/cyberdoge-bg.jpg';
 
 export const AppWrapper = styled.div`
   background-color: ${({theme}) => theme.bg1};
   height: 100%;
   min-height: 100vh;
   width: 100vw;
+  max-width: 100vw;
+  background-size: cover;
+  background-image: url(${CyberDoge_Background});
+  background-repeat: no-repeat;
 `;
 
 const Body = styled.div`
