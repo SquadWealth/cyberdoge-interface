@@ -2,8 +2,6 @@ import { useMemo } from "react";
 import { useActiveWeb3React } from "./web3";
 import { Contract } from "@ethersproject/contracts";
 import { getContract } from "../utils/contract";
-import { Erc20 as ERC20 } from "../constants/abis/types";
-import ERC20_ABI from '../constants/abis/erc20.json';
 
 // returns null on errors
 export function useContract<T extends Contract = Contract>(
@@ -29,11 +27,6 @@ export function useContract<T extends Contract = Contract>(
   }, [address, ABI, library, withSignerIfPossible, account]) as T;
 };
 
-export function useMulticall2Contract(): Contract | null {
-  const { chainId } = useActiveWeb3React();
-  return useContract(chainId && MULTICALL2_ADDRESS[chainId], MULTICALL2_ABI, false);
-};
-
-export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
-  return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible);
-};
+// export function useNFTContract(address: string | undefined): Contract | null {
+//   return useContract(address, CYBERDOGE_ABI, false);
+// };
