@@ -20,9 +20,10 @@ const Body = styled.div`
   height: 100vh;
   margin: auto auto auto auto;
   flex: 1;
-  background-size: cover;
+  background-size: contain;
   background-image: url(${CyberDoge_Background});
   background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const FloatingContainer = styled.div`
