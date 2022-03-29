@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header';
 import { DynamicCarousel } from './components/DynamicCarousel/DynamicCarousel';
 import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import CyberDoge_Background from './assets/cyberdoge-bg.jpg';
 import { Home } from './pages/Home';
 import { Mint } from './pages/Mint';
@@ -68,7 +68,8 @@ function App() {
          )} 
         <DynamicCarousel />
       </Body> */}
-      <Route exact strict path="/" component={Home} />
+      <Route exact strict path="/" render={() => <Redirect to="/home" />} />
+      <Route exact strict path="/home" component={Home} />
       <Route exact strict path="/mint" component={Mint} />
       <DynamicCarousel />
     </AppWrapper>
