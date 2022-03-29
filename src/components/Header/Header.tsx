@@ -29,11 +29,6 @@ const ImageContainer = styled.img`
 
 const NavigationContainer = styled.div`
   display: flex;
-  width: 300px;
-`;
-
-
-const NavigationLink = styled(StyledInternalLink)`
   margin: auto;
 `;
 
@@ -72,9 +67,7 @@ export const Header = () => {
         </Icon>
 
         <NavigationContainer>
-          <StyledNavLink 
-            to={'/home'}           
-          >
+          <StyledNavLink to={'/home'}>
             Home
           </StyledNavLink>
           <StyledNavLink to={'/mint'}>

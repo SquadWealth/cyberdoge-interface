@@ -1,4 +1,3 @@
-import React, { HTMLProps } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components/macro';
 
