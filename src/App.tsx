@@ -14,7 +14,7 @@ const AppWrapper = styled.div`
   min-height: 100vh;
   width: 100vw;
   max-width: 100vw;
-  `;
+`;
   
 const Body = styled.div`
   display: flex;
@@ -51,23 +51,6 @@ function App() {
   return (
     <AppWrapper>
       <Header />
-      {/* <Body>
-        { accountData ? (
-          <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
-            You have already minted a CyberDoge. Aroo!
-          </TEXT.BoldHeader1>
-        ):(
-          <FloatingContainer>
-            <TEXT.StandardHeader1 m={'auto auto 8px auto'}>
-              CYBERDOGE BY NARZ
-            </TEXT.StandardHeader1>
-            <MintButton>
-              MINT
-            </MintButton>
-          </FloatingContainer>
-         )} 
-        <DynamicCarousel />
-      </Body> */}
       <Route exact strict path="/" render={() => <Redirect to="/home" />} />
       <Route exact strict path="/home" component={Home} />
       <Route exact strict path="/mint" component={Mint} />
