@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const IconWrapper = styled.div<{ 
-  size?: number, 
+  height?: number, 
+  width?: number,
   margin?: string, 
   color?: string,
   transform?: string
@@ -13,8 +14,8 @@ const IconWrapper = styled.div<{
   bottom?: string
 }>`
   display: flex;
-  height: ${({ size }) => ( size )}px;
-  width: ${({ size }) => ( size )}px;
+  height: ${({ height }) => ( height )}px;
+  width: ${({ width }) => ( width )}px;
   margin: ${({ margin }) => ( margin ?? margin )};
   color: ${({ color }) => ( color ? color : '#fff' )};
   transform: ${({ transform }) => ( transform ? transform : 'rotate(0deg)' )};
@@ -29,7 +30,8 @@ const IconWrapper = styled.div<{
 `;
 
 export const Icon = ({
-  size,
+  height,
+  width,
   margin,
   children,
   color,
@@ -42,7 +44,8 @@ export const Icon = ({
   bottom,
   position
 }:{
-  size?: number
+  height?: number
+  width?: number
   margin?: string
   children: React.ReactNode
   color?: string
@@ -57,7 +60,8 @@ export const Icon = ({
 }) => {
   return (
     <IconWrapper 
-      size={size} 
+      height={height}
+      width={width}
       margin={margin} 
       color={color}
       transform={transform}

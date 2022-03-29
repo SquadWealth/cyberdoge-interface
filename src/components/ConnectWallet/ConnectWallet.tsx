@@ -10,7 +10,6 @@ const Container = styled.div`
 `;
 
 const ConnectWalletButton = styled.button`
-  font-family: 'Paytone One', sans-serif;
   background: #f856f8;
   box-shadow: none;
   border: none;

@@ -78,7 +78,7 @@ export default function ConnectWalletModal() {
             onClick={() => connect(x)}
           >
             <SelectionContentContainer>
-            <Icon size={20}>
+            <Icon height={20} width={20}>
               <img src={MetaMaskLogo} alt={'Metamask Icon'} />
             </Icon>
             <TEXT.StandardBody m={"0 12px"}>

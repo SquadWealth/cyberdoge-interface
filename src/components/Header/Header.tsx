@@ -37,24 +37,20 @@ const activeClassName = 'ACTIVE'
 const StyledNavLink = styled(NavLink).attrs({
   activeClassName,
 })`
-  align-items: left;
   border-radius: 3rem;
   outline: none;
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.text1};
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 8px 16px;
   word-break: break-word;
   overflow: hidden;
   white-space: nowrap;
   &.${activeClassName} {
     text-decoration: underline;
-  }
-
-  :hover,
-  :focus {
+    text-underline-offset: 3px;
   }
 `
 
@@ -62,7 +58,7 @@ export const Header = () => {
   return (
     <Container>
       <FlexRowContainer>
-        <Icon size={60}>
+        <Icon height={60} width={200}>
           <ImageContainer src={CyberDogeIcon} />
         </Icon>
 
