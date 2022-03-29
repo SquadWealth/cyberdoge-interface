@@ -5,14 +5,15 @@ import { ConnectWallet } from "../ConnectWallet/ConnectWallet";
 import { TEXT } from "../../theme/theme";
 import CyberDogeIcon from "../../assets/cyberdoge-icon.png";
 import { Icon } from "../Icon/Icon";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { enableLock, disableLock } from '../../utils/scrollLock';
 import Burger from "../Hamburger/Hamburger";
 import SlideMenu from "../SlideMenu/SlideMenu";
 
 const Container = styled.div`
   display: block;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: #ffe0fd;
 `;
 
@@ -21,16 +22,23 @@ const FlexRowContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 16px 60px;
-  max-width: 1100px;
   margin: auto;
+
+  ${({ theme }) => theme.mediaWidth.minSmall`
+    max-width: 1100px;
+  `};
 `;
 
 const ImageContainer = styled.img`
 `;
 
 const NavigationContainer = styled.div`
-  display: flex;
-  margin: auto;
+  display: none;
+
+  ${({ theme }) => theme.mediaWidth.minSmall`
+    display: flex;
+    margin: auto;
+  `};
 `;
 
 const activeClassName = 'ACTIVE'
@@ -58,13 +66,14 @@ const StyledNavLink = styled(NavLink).attrs({
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation().pathname;
+  const menuId = "main-menu";
 
     // close menu when at new route
     useEffect(() => {
       if (open) {
         setOpen((open) => false)
       };
-    }, [location])
+    }, [location, open])
   
     // disable scroll when mobile menu open
     useEffect(() => {
@@ -93,6 +102,7 @@ export const Header = () => {
         <ConnectWallet />
         
         <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+        <SlideMenu open={open} />
       </FlexRowContainer>
 
       <ConnectWalletModal />

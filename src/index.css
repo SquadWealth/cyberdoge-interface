@@ -4,7 +4,8 @@ body {
   font-family: 'Paytone One', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden !important;
+  position: relative;
+  overflow-x: hidden!important;
 }
 
 code {

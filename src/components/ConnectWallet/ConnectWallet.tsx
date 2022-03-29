@@ -5,7 +5,11 @@ import { useWalletModalToggle, useModalOpen } from '../../state/application/hook
 import { ApplicationModal } from '../../state/application/actions';
 
 const Container = styled.div`
-  display: flex;
+  display: none;
+
+  ${({ theme }) => theme.mediaWidth.minSmall`
+    display: flex;
+  `};
 `;
 
 const ConnectWalletButton = styled.button`

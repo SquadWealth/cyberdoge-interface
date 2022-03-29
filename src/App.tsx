@@ -16,16 +16,8 @@ const AppWrapper = styled.div`
   max-width: 100vw;
 `;
   
-const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: auto auto auto auto;
-  flex: 1;
-  background-size: contain;
-  background-image: url(${CyberDoge_Background});
-  background-repeat: no-repeat;
-  background-position: center;
+const CarouselContainer = styled.div`
+
 `;
 
 const MintButton = styled.button`
@@ -53,7 +45,9 @@ function App() {
       <Route exact strict path="/" render={() => <Redirect to="/home" />} />
       <Route exact strict path="/home" component={Home} />
       <Route exact strict path="/mint" component={Mint} />
-      <DynamicCarousel />
+      <CarouselContainer>
+        <DynamicCarousel />
+      </CarouselContainer>
     </AppWrapper>
   );
 }
