@@ -32,7 +32,7 @@ const ExternalButton = styled.button`
   border-radius: 30px;
   font-size: 18px;
   cursor: pointer;
-  margin: 8px auto;
+  margin: 12px auto;
 `;
 
 const Title = styled.div`
@@ -64,7 +64,7 @@ export function Home() {
     <Container>
       <Window>
         <Title>CYBERDOGES</Title>
-        <TEXT.SmallBody m={'auto'}>
+        <TEXT.SmallBody m={'4px auto'}>
           Created by &nbsp;
           <TwitterLink href={'https://twitter.com/paintedbynarz'}>
             narz.eth
