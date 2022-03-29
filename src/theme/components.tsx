@@ -1,3 +1,4 @@
+import React, { HTMLProps } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components/macro';
 
@@ -25,10 +26,9 @@ export const StyledInternalLink = styled(Link)<{
   }
 `
 
-const StyledLink = styled.a`
+export const StyledLink = styled.a`
   text-decoration: none;
   cursor: pointer;
-  color: ${({ theme }) => theme.text1};
   font-weight: 500;
 
   :hover {
@@ -44,3 +44,4 @@ const StyledLink = styled.a`
     text-decoration: none;
   }
 `
+

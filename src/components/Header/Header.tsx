@@ -5,7 +5,6 @@ import { ConnectWallet } from "../ConnectWallet/ConnectWallet";
 import { TEXT } from "../../theme/theme";
 import CyberDogeIcon from "../../assets/cyberdoge-icon.png";
 import { Icon } from "../Icon/Icon";
-import { StyledInternalLink } from "../../theme/components";
 import { NavLink } from 'react-router-dom';
 
 const Container = styled.div`
@@ -19,8 +18,8 @@ const FlexRowContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 30px 60px;
-  max-width: 1000px;
+  padding: 16px 60px;
+  max-width: 1100px;
   margin: auto;
 `;
 
@@ -42,7 +41,7 @@ const StyledNavLink = styled(NavLink).attrs({
   cursor: pointer;
   text-decoration: none;
   color: ${({ theme }) => theme.text1};
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   padding: 8px 16px;
   word-break: break-word;
