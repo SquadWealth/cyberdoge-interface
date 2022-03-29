@@ -9,9 +9,9 @@ const StyledMenu = styled.nav<{open: boolean, height: number, width: number}>`
   background: transparent;
   height: 100vh;
   text-align: left;
-  backdrop-filter: blur(60px);
   width: 100%;
   height: ${({ height, open }) => ( `${height}` )}px;
+  background: ${({ theme }) => theme.bg3};
   position: fixed;
   top: 0;
   right: 0;
@@ -23,6 +23,7 @@ const StyledMenu = styled.nav<{open: boolean, height: number, width: number}>`
   z-index: ${({ open }) => ( open ? 1 : -1 )};
   visibility: ${({ open }) => ( open ? 'default' : 'hidden' )};
 `;
+  // backdrop-filter: blur(60px);
 
 const StyledInternalLink = styled(NavLink)`
   color: ${({ theme }) => theme.text1};

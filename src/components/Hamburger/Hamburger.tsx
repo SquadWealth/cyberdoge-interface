@@ -21,11 +21,14 @@ export const StyledBurger = styled.button<{open: boolean}>`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  max-height: 48px;
+  min-height: 48px;
+  margin: auto 0;
 
   span {
-    width: ${({ open }) => ( open ? '45px' : '46px' )};
-    height: ${({ open }) => ( open ? '3px' : '3px' )};
-    background: ${({ theme, open }) => open ? theme.white: theme.white};
+    width: ${({ open }) => ( open ? '40px' : '46px' )};
+    height: ${({ open }) => ( open ? '5px' : '5px' )};
+    background: ${({ theme, open }) => open ? theme.bg2 : theme.bg2};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

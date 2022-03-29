@@ -42,7 +42,7 @@ export function colors(darkMode: boolean): Colors {
     // backgrounds
     bg1: darkMode ? '#F2F2F2' : '#F7F7F7',
     bg2: darkMode ? '#eb71eb' : '#0B0F1C',
-    bg3: darkMode ? '#565A69' : '#edeef2',
+    bg3: darkMode ? '#ffe0fd' : '#edeef2',
 
     //misc
     white1: '#f2f2f2',
