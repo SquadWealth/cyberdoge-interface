@@ -9,7 +9,7 @@ const StyledMenu = styled.nav<{open: boolean, height: number, width: number}>`
   background: transparent;
   height: 100vh;
   text-align: left;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(60px);
   width: 100%;
   height: ${({ height, open }) => ( `${height}` )}px;
   position: fixed;
@@ -18,6 +18,7 @@ const StyledMenu = styled.nav<{open: boolean, height: number, width: number}>`
   left: 0;
   transition: 0.3s ease-in-out;
   overflow: hidden;
+  padding-top: 75px;
   opacity: ${({ open }) => ( open ? 1 : 0 )};
   z-index: ${({ open }) => ( open ? 1 : -1 )};
   visibility: ${({ open }) => ( open ? 'default' : 'hidden' )};
@@ -25,8 +26,8 @@ const StyledMenu = styled.nav<{open: boolean, height: number, width: number}>`
 
 const StyledInternalLink = styled(NavLink)`
   color: ${({ theme }) => theme.text1};
-  font-size: 14px;
-  text-align: left;
+  font-size: 32px;
+  text-align: center;
   text-decoration: none;
   font-weight: 700;
   margin: 16px 0;
@@ -93,13 +94,6 @@ const SlideMenu = ({
           MINT
         </StyledInternalLink>
 
-        <Separator/>
-        
-        <StyledExternalLink 
-          href="https://overlay.market"
-          >
-          Risks
-        </StyledExternalLink>
       </Content>
     </StyledMenu>
   )

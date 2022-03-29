@@ -8,7 +8,7 @@ export const StyledBurger = styled.button<{open: boolean}>`
   right: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: auto;
   background: transparent;
   border: none;
@@ -23,8 +23,8 @@ export const StyledBurger = styled.button<{open: boolean}>`
   user-select: none;
 
   span {
-    width: ${({ open }) => ( open ? '17px' : '4px' )};
-    height: ${({ open }) => ( open ? '2px' : '4px' )};
+    width: ${({ open }) => ( open ? '45px' : '46px' )};
+    height: ${({ open }) => ( open ? '3px' : '3px' )};
     background: ${({ theme, open }) => open ? theme.white: theme.white};
     border-radius: 10px;
     transition: all 0.3s linear;

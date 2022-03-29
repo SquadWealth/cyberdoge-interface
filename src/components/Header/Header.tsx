@@ -21,11 +21,12 @@ const FlexRowContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 16px 60px;
+  padding: 12px 32px;
   margin: auto;
 
   ${({ theme }) => theme.mediaWidth.minSmall`
     max-width: 1100px;
+    padding: 16px 60px;
   `};
 `;
 
@@ -73,7 +74,7 @@ export const Header = () => {
       if (open) {
         setOpen((open) => false)
       };
-    }, [location, open])
+    }, [location])
   
     // disable scroll when mobile menu open
     useEffect(() => {
