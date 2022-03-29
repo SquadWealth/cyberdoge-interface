@@ -1,11 +1,13 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ConnectWallet } from './components/ConnectWallet/ConnectWallet';
 import { Header } from './components/Header/Header';
 import { DynamicCarousel } from './components/DynamicCarousel/DynamicCarousel';
 import { TEXT } from './theme/theme';
 import { useAccount, useConnect } from 'wagmi';
+import { Route, Switch } from 'react-router-dom';
 import CyberDoge_Background from './assets/cyberdoge-bg.jpg';
+import { Home } from './pages/Home';
+import { Mint } from './pages/Mint';
 
 const AppWrapper = styled.div`
   height: 100%;
@@ -26,18 +28,9 @@ const Body = styled.div`
   background-position: center;
 `;
 
-const FloatingContainer = styled.div`
-  background-color: #ffe0fd;
-  padding: 16px;
-  width: 420px;
-  margin: auto auto auto auto;
-  display: flex;
-  flex-direction: column;
-`;
-
 const MintButton = styled.button`
   font-family: 'Fredoka', san-serif;
-  background: #f640fe8f;
+  background: #f640fe;
   box-shadow: none;
   border: none;
   border-radius: 8px;
@@ -58,7 +51,7 @@ function App() {
   return (
     <AppWrapper>
       <Header />
-      <Body>
+      {/* <Body>
         { accountData ? (
           <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
             You have already minted a CyberDoge. Aroo!
@@ -72,9 +65,12 @@ function App() {
               MINT
             </MintButton>
           </FloatingContainer>
-        )}
+         )} 
         <DynamicCarousel />
-      </Body>
+      </Body> */}
+      <Route exact strict path="/" component={Home} />
+      <Route exact strict path="/mint" component={Mint} />
+      <DynamicCarousel />
     </AppWrapper>
   );
 }

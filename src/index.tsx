@@ -8,15 +8,18 @@ import store from './state/state';
 import { Provider as Web3Provider } from 'wagmi';
 import ThemeProvider from './theme/theme';
 import { connectors } from './connectors/connectors';
+import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Web3Provider autoConnect connectors={connectors}>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </Web3Provider>
+      <HashRouter>
+        <Web3Provider autoConnect connectors={connectors}>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </Web3Provider>
+      </HashRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
