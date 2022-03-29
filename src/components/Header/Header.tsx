@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import ConnectWalletModal from "../ConnectWallet/ConnectWalletModal";
 import { ConnectWallet } from "../ConnectWallet/ConnectWallet";
@@ -6,6 +6,8 @@ import { TEXT } from "../../theme/theme";
 import CyberDogeIcon from "../../assets/cyberdoge-icon.png";
 import { Icon } from "../Icon/Icon";
 import { NavLink } from 'react-router-dom';
+import Burger from "../Hamburger/Hamburger";
+import SlideMenu from "../SlideMenu/SlideMenu";
 
 const Container = styled.div`
   display: block;
@@ -54,6 +56,25 @@ const StyledNavLink = styled(NavLink).attrs({
 `
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation().pathname;
+
+    // close menu when at new route
+    useEffect(() => {
+      if (open) {
+        setOpen((open) => false)
+      };
+    }, [location])
+  
+    // disable scroll when mobile menu open
+    useEffect(() => {
+      if (open) {
+        enableLock();
+      } else {
+        disableLock();
+      }
+    }, [open]);
+
   return (
     <Container>
       <FlexRowContainer>
@@ -69,8 +90,9 @@ export const Header = () => {
             MINT
           </StyledNavLink>
         </NavigationContainer>
-        
         <ConnectWallet />
+        
+        <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
       </FlexRowContainer>
 
       <ConnectWalletModal />
