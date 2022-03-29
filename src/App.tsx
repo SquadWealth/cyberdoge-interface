@@ -29,7 +29,6 @@ const Body = styled.div`
 `;
 
 const MintButton = styled.button`
-  font-family: 'Fredoka', san-serif;
   background: #f640fe;
   box-shadow: none;
   border: none;

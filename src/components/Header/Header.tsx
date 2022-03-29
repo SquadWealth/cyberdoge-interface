@@ -68,10 +68,10 @@ export const Header = () => {
 
         <NavigationContainer>
           <StyledNavLink to={'/home'}>
-            Home
+            HOME
           </StyledNavLink>
           <StyledNavLink to={'/mint'}>
-            Mint
+            MINT
           </StyledNavLink>
         </NavigationContainer>
         

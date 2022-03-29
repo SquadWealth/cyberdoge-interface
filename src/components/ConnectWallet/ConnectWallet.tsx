@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const ConnectWalletButton = styled.button`
-  font-family: 'Fredoka', san-serif;
+  font-family: 'Paytone One', sans-serif;
   background: #f856f8;
   box-shadow: none;
   border: none;
@@ -23,17 +23,6 @@ const ConnectWalletButton = styled.button`
   cursor: pointer;
   margin: auto;
 `;
-
-const Web3WalletDisplay = styled.div`
-  font-family: 'Fredoka', san-serif;
-  background: #56CCF2;
-  color: #f2f2f2;
-  border: none;
-  border-radius: 8px;
-  box-shadow: none;
-  font-size: 12px;
-  padding: 12px;
-`
 
 
 export const ConnectWallet = () => {

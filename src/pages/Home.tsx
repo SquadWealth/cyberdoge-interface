@@ -21,7 +21,7 @@ const CenterContainer = styled.div`
 `;
 
 const OpenSeaButton = styled.button`
-  font-family: 'Fredoka', san-serif;
+  font-family: 'Paytone One', sans-serif;
   background: #f856f8;
   box-shadow: none;
   border: none;
