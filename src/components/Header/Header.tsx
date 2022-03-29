@@ -5,6 +5,8 @@ import { ConnectWallet } from "../ConnectWallet/ConnectWallet";
 import { TEXT } from "../../theme/theme";
 import CyberDogeIcon from "../../assets/cyberdoge-icon.png";
 import { Icon } from "../Icon/Icon";
+import { StyledInternalLink } from "../../theme/components";
+import { NavLink } from 'react-router-dom';
 
 const Container = styled.div`
   display: block;
@@ -25,14 +27,61 @@ const FlexRowContainer = styled.div`
 const ImageContainer = styled.img`
 `;
 
+const NavigationContainer = styled.div`
+  display: flex;
+  width: 300px;
+`;
+
+
+const NavigationLink = styled(StyledInternalLink)`
+  margin: auto;
+`;
+
+const activeClassName = 'ACTIVE'
+
+const StyledNavLink = styled(NavLink).attrs({
+  activeClassName,
+})`
+  align-items: left;
+  border-radius: 3rem;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${({ theme }) => theme.text1};
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  word-break: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  &.${activeClassName} {
+    text-decoration: underline;
+  }
+
+  :hover,
+  :focus {
+  }
+`
 
 export const Header = () => {
   return (
     <Container>
       <FlexRowContainer>
-          <Icon size={60}>
-            <ImageContainer src={CyberDogeIcon} />
-          </Icon>
+        <Icon size={60}>
+          <ImageContainer src={CyberDogeIcon} />
+        </Icon>
+
+        <NavigationContainer>
+          <StyledNavLink 
+            to={'/home'}           
+          >
+            Home
+          </StyledNavLink>
+          <StyledNavLink to={'/mint'}>
+            Mint
+          </StyledNavLink>
+        </NavigationContainer>
+        
         <ConnectWallet />
       </FlexRowContainer>
 

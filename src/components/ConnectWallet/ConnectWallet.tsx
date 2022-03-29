@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const ConnectWalletButton = styled.button`
   font-family: 'Fredoka', san-serif;
-  background: #f640fe8f;
+  background: #f856f8;
   box-shadow: none;
   border: none;
   border-radius: 8px;

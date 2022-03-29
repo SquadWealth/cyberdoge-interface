@@ -5,9 +5,9 @@ import styled, { keyframes } from 'styled-components/macro';
 // An internal link from the react-router-dom library that is correctly styled
 export const StyledInternalLink = styled(Link)<{ 
   noEffect?: boolean
-  active?: true
+  active?: boolean
 }>`
-  text-decoration: none;
+  text-decoration: ${({active}) => ( active ? 'underline' : 'none')};
   cursor: pointer;
   color: ${({ theme }) => theme.text1};
   font-weight: 500;
