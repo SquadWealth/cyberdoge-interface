@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CyberDoge_Carousel from "../../assets/carousel.png";
+import CyberDoge_Carousel from "../../assets/cyberdoge-carousel.png";
 
 const Container = styled.div`
   display: block;
@@ -10,7 +10,7 @@ const Carousel = styled.img`
   position: absolute;
   bottom: 0;
   animation: moveSlideshow 100s linear infinite;
-  height: 30%;
+  height: 33%;
 
   @keyframes moveSlideshow {
     100% {
