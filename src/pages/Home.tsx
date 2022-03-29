@@ -14,7 +14,11 @@ const Container = styled.div`
 const Window = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 200px auto auto auto;
+  margin: 150px auto auto auto;
+
+  ${({ theme }) => theme.mediaWidth.minSmall`
+    margin: 200px auto auto auto;
+  `};
 `;
 
 const ExternalButton = styled.button`
@@ -36,6 +40,7 @@ const Title = styled.div`
   text-align: center;
   color: ${({ theme }) => theme.text1};
   letter-spacing: 3px;
+  cursor:;
 `;
 
 const TwitterLink = styled(StyledLink)`
