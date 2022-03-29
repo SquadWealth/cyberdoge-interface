@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ThreeDots from 'react-loader-spinner';
 import { useAccount, useConnect } from 'wagmi';
 import { shortenAddress } from '../../utils/web3';
 import { useWalletModalToggle, useModalOpen } from '../../state/application/hooks';
@@ -10,7 +9,7 @@ const Container = styled.div`
 `;
 
 const ConnectWalletButton = styled.button`
-  background: #f856f8;
+  background: #eb71eb;
   box-shadow: none;
   border: none;
   border-radius: 8px;

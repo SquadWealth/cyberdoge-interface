@@ -34,14 +34,14 @@ export function colors(darkMode: boolean): Colors {
     black: '#000000',
 
     // text
-    text1: darkMode ? '#f640fe8f' : '#000000',
-    text2: '10DCB1',
+    text1: darkMode ? '#eb71eb' : '#000000',
+    text2: '#F2F2F2',
     text3: '#0B0F1C',
     text4: '#12B4FF',
 
     // backgrounds
     bg1: darkMode ? '#F2F2F2' : '#F7F7F7',
-    bg2: darkMode ? '#F7F7F7' : '#0B0F1C',
+    bg2: darkMode ? '#eb71eb' : '#0B0F1C',
     bg3: darkMode ? '#565A69' : '#edeef2',
 
     //misc

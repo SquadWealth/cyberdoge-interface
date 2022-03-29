@@ -10,7 +10,7 @@ const Carousel = styled.img`
   position: absolute;
   bottom: 0;
   animation: moveSlideshow 100s linear infinite;
-  height: 25%;
+  height: 30%;
 
   @keyframes moveSlideshow {
     100% {

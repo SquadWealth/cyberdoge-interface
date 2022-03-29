@@ -9,18 +9,17 @@ const Container = styled.div`
   height: 100vh;
   margin: auto auto auto auto;
   flex: 1;
-  `;
-  // background-image: url(${CyberDoge_Background});
+`;
 
 const Window = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 250px auto auto auto;
+  margin: 200px auto auto auto;
 `;
 
 const ExternalButton = styled.button`
-  background: #ff94ff;
-  color: #f2f2f2;
+  background: ${({ theme }) => theme.bg2};
+  color: ${({ theme }) => theme.white};
   box-shadow: none;
   border: none;
   border-radius: 8px;
@@ -35,12 +34,12 @@ const ExternalButton = styled.button`
 const Title = styled.div`
   font-size: 48px;
   text-align: center;
-  color: #f640fe8f;
+  color: ${({ theme }) => theme.text1};
   letter-spacing: 3px;
 `;
 
 const TwitterLink = styled(StyledLink)`
-  color: #f640fe8f;
+  color: ${({ theme }) => theme.text1};
 `
 const OpenSeaLink = styled(StyledLink)`
   color: #f2f2f2;
