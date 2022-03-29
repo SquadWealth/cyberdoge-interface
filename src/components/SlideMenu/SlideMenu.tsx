@@ -33,6 +33,19 @@ const StyledInternalLink = styled(NavLink)`
   font-weight: 700;
   margin: 16px 0;
   border: none !important;
+
+  :focus {
+    outline: none;
+    text-decoration: none;
+  }
+  :hover {
+    outline: none;
+    text-decoration: none;
+  }
+  :active {
+    outline: none;
+    text-decoration: none;
+  }
 `;
 
 const StyledExternalLink = styled.a.attrs(props => ({
@@ -45,14 +58,6 @@ const StyledExternalLink = styled.a.attrs(props => ({
   text-decoration: none;
   color: white;
   font-weight: 700;
-  margin: 16px 0;
-`;
-
-const Separator = styled.div`
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: white;
   margin: 16px 0;
 `;
 

@@ -21,7 +21,7 @@ const FlexRowContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 12px 32px;
+  padding: 12px 24px;
   margin: auto;
 
   ${({ theme }) => theme.mediaWidth.minSmall`

@@ -17,9 +17,9 @@ export function Mint() {
   return (
     <Container>
       {accountData?.address && (
-        <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
+        <TEXT.StandardBody m={'auto'} color={'#f640fe8f'}>
           You have already minted a CyberDoge. Aroo!
-        </TEXT.BoldHeader1>
+        </TEXT.StandardBody>
       )}
       {!accountData && (
         <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
