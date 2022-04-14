@@ -5,7 +5,7 @@ import CyberDoge_ABI from '../constants/abis/CyberDoge.json';
 export function useWalletClaimable(accountAddress?: string): any {
   const [{ data: signerData, error: signerError, loading: signerLoading }, getSigner] = useSigner();
   const contract = useContract({
-    addressOrName: '0xB49cc5888979455411D31D38157F288566aCdb02',
+    addressOrName: '0x83aB569F0235456f91f5e60E02Ee98b04b3beD07',
     contractInterface: CyberDoge_ABI,
     signerOrProvider: signerData
   });
