@@ -4,6 +4,7 @@ import { useAccount } from 'wagmi'
 import { TEXT } from '../theme/theme'
 import { useWalletClaimable } from '../hooks/useWalletClaimable'
 import { useMintCallback } from '../hooks/useMintCallback'
+import { StyledLink } from '../theme/components'
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +16,8 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: auto;
   padding-bottom: 100px;
 `
@@ -30,6 +33,10 @@ const MintButton = styled.button`
   width: 300px;
   box-shadow: 0 0 5px ${({ theme }) => theme.bg2};
   margin: 24px auto auto auto;
+`
+
+const OpenSeaLink = styled(StyledLink)`
+  color: #f2f2f2;
 `
 
 export function Mint() {
@@ -79,7 +86,13 @@ export function Mint() {
         <Content>
           <TEXT.StandardBody m={'auto auto 0 auto'}>You have 1 doge available to adopt. Aroo!</TEXT.StandardBody>
           {attemptingTransaction && <MintButton>Processing adoption...</MintButton>}
-          {transactionHash !== undefined && <MintButton>Adopted! View on OpenSea.</MintButton>}
+          {transactionHash !== undefined && (
+            <MintButton>
+              <OpenSeaLink href={'https://opensea.io/collection/cyberdoge-by-narz'}>
+                #{claimable} Adopted! View on OpenSea.
+              </OpenSeaLink>
+            </MintButton>
+          )}
           {!attemptingTransaction && transactionHash === undefined && (
             <MintButton onClick={handleMint}>Adopt</MintButton>
           )}

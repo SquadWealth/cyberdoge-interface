@@ -74,7 +74,7 @@ export function Home() {
           <TwitterLink href={'https://twitter.com/8igboydiamonds'} target="_blank">bigboydiamonds.eth</TwitterLink>
         </TEXT.SmallBody>
         <ExternalButton>
-          <OpenSeaLink href={'https://opensea.io/collection/cyber-doges'}>View on OpenSea</OpenSeaLink>
+          <OpenSeaLink href={'https://opensea.io/collection/cyberdoge-by-narz'}>View on OpenSea</OpenSeaLink>
         </ExternalButton>
         <CustomArtwork />
       </Window>
