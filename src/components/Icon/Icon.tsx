@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const IconWrapper = styled.div<{ 
-  height?: number, 
-  width?: number,
-  margin?: string, 
-  color?: string,
+const IconWrapper = styled.div<{
+  height?: number
+  width?: number
+  margin?: string
+  color?: string
   transform?: string
   clickable?: boolean
   position?: string
@@ -14,20 +14,20 @@ const IconWrapper = styled.div<{
   bottom?: string
 }>`
   display: flex;
-  height: ${({ height }) => ( height )}px;
-  width: ${({ width }) => ( width )}px;
-  margin: ${({ margin }) => ( margin ?? margin )};
-  color: ${({ color }) => ( color ? color : '#fff' )};
-  transform: ${({ transform }) => ( transform ? transform : 'rotate(0deg)' )};
+  height: ${({ height }) => height}px;
+  width: ${({ width }) => width}px;
+  margin: ${({ margin }) => margin ?? margin};
+  color: ${({ color }) => (color ? color : '#fff')};
+  transform: ${({ transform }) => (transform ? transform : 'rotate(0deg)')};
   transition: transform 0.2s ease-out;
-  cursor: ${({ clickable }) => ( clickable ? 'pointer' : 'default')};
+  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'default')};
   z-index: 10;
   top: ${({ top }) => top ?? top};
   right: ${({ right }) => right ?? right};
   left: ${({ left }) => left ?? left};
   bottom: ${({ bottom }) => bottom ?? bottom};
-  position: ${({ position }) => ( position ? position : 'auto' )};
-`;
+  position: ${({ position }) => (position ? position : 'auto')};
+`
 
 export const Icon = ({
   height,
@@ -42,8 +42,8 @@ export const Icon = ({
   right,
   left,
   bottom,
-  position
-}:{
+  position,
+}: {
   height?: number
   width?: number
   margin?: string
@@ -59,10 +59,10 @@ export const Icon = ({
   position?: string
 }) => {
   return (
-    <IconWrapper 
+    <IconWrapper
       height={height}
       width={width}
-      margin={margin} 
+      margin={margin}
       color={color}
       transform={transform}
       clickable={clickable}
@@ -72,8 +72,8 @@ export const Icon = ({
       left={left}
       bottom={bottom}
       position={position}
-      >
-        { children }
+    >
+      {children}
     </IconWrapper>
   )
-};
+}

@@ -1,12 +1,12 @@
-import React from 'react';
-import styled, { css } from 'styled-components/macro';
-import { DialogOverlay, DialogContent } from '@reach/dialog';
-import { animated, useTransition, useSpring } from 'react-spring';
-import { isMobile } from 'react-device-detect';
-import { useGesture } from 'react-use-gesture';
-import { transparentize } from 'polished';
+import React from 'react'
+import styled, { css } from 'styled-components/macro'
+import { DialogOverlay, DialogContent } from '@reach/dialog'
+import { animated, useTransition, useSpring } from 'react-spring'
+import { isMobile } from 'react-device-detect'
+import { useGesture } from 'react-use-gesture'
+import { transparentize } from 'polished'
 
-const AnimatedDialogOverlay = animated(DialogOverlay);
+const AnimatedDialogOverlay = animated(DialogOverlay)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledDialogOverlay = styled(AnimatedDialogOverlay)`
   &[data-reach-dialog-overlay] {
@@ -29,7 +29,7 @@ const StyledDialogOverlay = styled(AnimatedDialogOverlay)`
   }
 `
 
-const AnimatedDialogContent = animated(DialogContent);
+const AnimatedDialogContent = animated(DialogContent)
 // destructure to not pass custom props to Dialog DOM element
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, width, ...rest }) => (
@@ -42,7 +42,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, widt
   &[data-reach-dialog-content] {
     margin: auto;
     background-color: ${({ theme }) => theme.bg1};
-    border: 0px solid #31D3FE;
+    border: 0px solid #31d3fe;
     box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.95, theme.bg1)};
     padding: 0px;
     width: 85vw;
@@ -51,7 +51,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, widt
 
     align-self: ${({ mobile }) => (mobile ? 'flex-end' : 'center')};
 
-    max-width: ${({ width }) => ( width ? width : '420px')};
+    max-width: ${({ width }) => (width ? width : '420px')};
 
     ${({ maxHeight }) =>
       maxHeight &&
@@ -156,4 +156,4 @@ export default function Modal({
       )}
     </>
   )
-};
+}

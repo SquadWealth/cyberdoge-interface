@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import CyberDoge_Carousel from "../../assets/cyberdoge-carousel.png";
+import styled from 'styled-components'
+import CyberDoge_Carousel from '../../assets/cyberdoge-carousel.png'
 
 const Container = styled.div`
   display: block;
   overflow-x: hidden !important;
-`;
+`
 
 const Carousel = styled.img`
   position: absolute;

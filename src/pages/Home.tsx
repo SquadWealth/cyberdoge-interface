@@ -1,8 +1,7 @@
-import styled from "styled-components";
-import CyberDoge_Background from '../assets/cyberdoge-bg.jpg';
-import House_Background from '../assets/house.png';
-import { StyledLink } from "../theme/components";
-import { TEXT } from "../theme/theme";
+import styled from 'styled-components'
+import House_Background from '../assets/house.png'
+import { StyledLink } from '../theme/components'
+import { TEXT } from '../theme/theme'
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   margin: auto auto auto auto;
   flex: 1;
-`;
+`
 
 const Window = styled.div`
   display: flex;
@@ -20,7 +19,7 @@ const Window = styled.div`
   ${({ theme }) => theme.mediaWidth.minSmall`
     margin: 200px auto auto auto;
   `};
-`;
+`
 
 const ExternalButton = styled.button`
   background: ${({ theme }) => theme.bg2};
@@ -34,22 +33,23 @@ const ExternalButton = styled.button`
   font-size: 18px;
   cursor: pointer;
   margin: 12px auto;
-`;
+`
 
 const Title = styled.div`
   font-size: 48px;
   text-align: center;
   color: ${({ theme }) => theme.text1};
   letter-spacing: 3px;
-  cursor:;
-`;
+  cursor: ;
+`
 
 const TwitterLink = styled(StyledLink)`
   color: ${({ theme }) => theme.text1};
 `
+
 const OpenSeaLink = styled(StyledLink)`
   color: #f2f2f2;
-`;
+`
 
 const CustomArtwork = styled.div`
   height: 200px;
@@ -67,22 +67,14 @@ export function Home() {
         <Title>CYBERDOGES</Title>
         <TEXT.SmallBody m={'4px auto'}>
           Created by &nbsp;
-          <TwitterLink href={'https://twitter.com/paintedbynarz'}>
-            narz.eth
-          </TwitterLink>
+          <TwitterLink href={'https://twitter.com/paintedbynarz'}>narz.eth</TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/misteropm_eth'}>
-            misteropm.eth
-          </TwitterLink>
+          <TwitterLink href={'https://twitter.com/misteropm_eth'}>misteropm.eth</TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/8igboydiamonds'}>
-            bigboydiamonds.eth
-          </TwitterLink>
+          <TwitterLink href={'https://twitter.com/8igboydiamonds'}>bigboydiamonds.eth</TwitterLink>
         </TEXT.SmallBody>
         <ExternalButton>
-          <OpenSeaLink href={'https://opensea.io/collection/cyber-doges'}>
-            View on OpenSea
-          </OpenSeaLink>
+          <OpenSeaLink href={'https://opensea.io/collection/cyber-doges'}>View on OpenSea</OpenSeaLink>
         </ExternalButton>
         <CustomArtwork />
       </Window>

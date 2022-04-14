@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react';
-import styled from "styled-components";
-import ConnectWalletModal from "../ConnectWallet/ConnectWalletModal";
-import { ConnectWallet } from "../ConnectWallet/ConnectWallet";
-import { TEXT } from "../../theme/theme";
-import CyberDogeIcon from "../../assets/cyberdoge-icon.png";
-import { Icon } from "../Icon/Icon";
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import { enableLock, disableLock } from '../../utils/scrollLock';
-import Burger from "../Hamburger/Hamburger";
-import SlideMenu from "../SlideMenu/SlideMenu";
+import { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import ConnectWalletModal from '../ConnectWallet/ConnectWalletModal'
+import { ConnectWallet } from '../ConnectWallet/ConnectWallet'
+import { TEXT } from '../../theme/theme'
+import CyberDogeIcon from '../../assets/cyberdoge-icon.png'
+import { Icon } from '../Icon/Icon'
+import { NavLink, useLocation, useHistory } from 'react-router-dom'
+import { enableLock, disableLock } from '../../utils/scrollLock'
+import Burger from '../Hamburger/Hamburger'
+import SlideMenu from '../SlideMenu/SlideMenu'
 
 const Container = styled.div`
   display: block;
   position: fixed;
   width: 100vw;
   background-color: #ffe0fd;
-`;
+`
 
 const FlexRowContainer = styled.div`
   display: flex;
@@ -28,10 +28,9 @@ const FlexRowContainer = styled.div`
     max-width: 1100px;
     padding: 16px 60px;
   `};
-`;
+`
 
-const ImageContainer = styled.img`
-`;
+const ImageContainer = styled.img``
 
 const NavigationContainer = styled.div`
   display: none;
@@ -40,7 +39,7 @@ const NavigationContainer = styled.div`
     display: flex;
     margin: auto;
   `};
-`;
+`
 
 const activeClassName = 'ACTIVE'
 
@@ -65,25 +64,25 @@ const StyledNavLink = styled(NavLink).attrs({
 `
 
 export const Header = () => {
-  const [open, setOpen] = useState(false);
-  const location = useLocation().pathname;
-  const menuId = "main-menu";
+  const [open, setOpen] = useState(false)
+  const location = useLocation().pathname
+  const menuId = 'main-menu'
 
-    // close menu when at new route
-    useEffect(() => {
-      if (open) {
-        setOpen((open) => false)
-      };
-    }, [location])
-  
-    // disable scroll when mobile menu open
-    useEffect(() => {
-      if (open) {
-        enableLock();
-      } else {
-        disableLock();
-      }
-    }, [open]);
+  // close menu when at new route
+  useEffect(() => {
+    if (open) {
+      setOpen((open) => false)
+    }
+  }, [location])
+
+  // disable scroll when mobile menu open
+  useEffect(() => {
+    if (open) {
+      enableLock()
+    } else {
+      disableLock()
+    }
+  }, [open])
 
   return (
     <Container>
@@ -93,15 +92,11 @@ export const Header = () => {
         </Icon>
 
         <NavigationContainer>
-          <StyledNavLink to={'/home'}>
-            HOME
-          </StyledNavLink>
-          <StyledNavLink to={'/mint'}>
-            MINT
-          </StyledNavLink>
+          <StyledNavLink to={'/home'}>HOME</StyledNavLink>
+          <StyledNavLink to={'/mint'}>MINT</StyledNavLink>
         </NavigationContainer>
         <ConnectWallet />
-        
+
         <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
         <SlideMenu open={open} />
       </FlexRowContainer>
@@ -109,4 +104,4 @@ export const Header = () => {
       <ConnectWalletModal />
     </Container>
   )
-};
+}
