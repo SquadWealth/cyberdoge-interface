@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CyberDoge_Background from '../assets/cyberdoge-bg.jpg';
+import House_Background from '../assets/house.png';
 import { StyledLink } from "../theme/components";
 import { TEXT } from "../theme/theme";
 
@@ -53,7 +54,7 @@ const OpenSeaLink = styled(StyledLink)`
 const CustomArtwork = styled.div`
   height: 200px;
   width: 100%;
-  background-image: url(${CyberDoge_Background});
+  background-image: url(${House_Background});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
@@ -68,6 +69,14 @@ export function Home() {
           Created by &nbsp;
           <TwitterLink href={'https://twitter.com/paintedbynarz'}>
             narz.eth
+          </TwitterLink>
+          ,&nbsp;
+          <TwitterLink href={'https://twitter.com/misteropm_eth'}>
+            misteropm.eth
+          </TwitterLink>
+          ,&nbsp;
+          <TwitterLink href={'https://twitter.com/8igboydiamonds'}>
+            bigboydiamonds.eth
           </TwitterLink>
         </TEXT.SmallBody>
         <ExternalButton>

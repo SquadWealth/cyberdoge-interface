@@ -14,6 +14,11 @@ const Container = styled.div`
   width: 100vw;
 `;
 
+const Content = styled.div`
+  margin: auto;
+  padding-bottom: 100px;
+`;
+
 const MintButton = styled.button`
   background: ${({theme}) => (theme.bg2)}; 
   border: 2px solid ${({theme}) => (theme.bg2)};
@@ -22,7 +27,7 @@ const MintButton = styled.button`
   font-size: 12px;
   cursor: pointer;
   padding: 12px;
-  width: 200px;
+  width: 300px;
   box-shadow: 0 0 5px ${({theme}) => (theme.bg2)};
   margin: 24px auto auto auto;
 `;
@@ -31,7 +36,6 @@ export function Mint() {
   const [{ data: accountData }] = useAccount();
   const claimable = useWalletClaimable('0x8e8b3e19717A5DDCfccce9Bf3b225E61efDD7937');
   const { callback: mintCallback } = useMintCallback(claimable ? claimable : '');
-  console.log('claimable: ', claimable);
 
   const [{ attemptingTransaction, transactionErrorMessage, transactionHash }, setMintState] = useState<{
     attemptingTransaction: boolean;
@@ -71,42 +75,45 @@ export function Mint() {
 
   return (
     <Container>
-      {claimable === undefined && (
-        <TEXT.StandardBody m={'auto'}>
-          Checking for claimable tokens...
-        </TEXT.StandardBody>
+      {claimable === undefined && accountData && (
+        <Content>
+          Checking for doges to adopt...
+        </Content>
       )}
-      {claimable === null && (
-        <TEXT.StandardBody m={'auto'}>
-          You have no tokens available to mint.
-        </TEXT.StandardBody>
+      {claimable === null && accountData && (
+        <Content>
+          You have no doge available to adopt.
+        </Content>
       )}
-      {claimable && (
-        <>
+      {claimable && accountData && (
+        <Content>
           <TEXT.StandardBody m={'auto auto 0 auto'}>
-            You have 1 token available to claim.
+            You have 1 doge available to adopt. Aroo!
           </TEXT.StandardBody>
           {attemptingTransaction && (
             <MintButton>
-              Minting...
+              Processing adoption...
             </MintButton>
           )}
           {transactionHash !== undefined && (
             <MintButton>
-              Minted!
+              Adopted! View on OpenSea.
             </MintButton>
           )}
           {!attemptingTransaction && transactionHash === undefined && (
             <MintButton onClick={handleMint}>
-              Mint
+              Adopt
             </MintButton>
           )}
-        </>
+        </Content>
       )}
+
       {!accountData && (
-        <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
-          Please connect wallet.
-        </TEXT.BoldHeader1>
+        <Content>
+          <TEXT.BoldHeader1 m={'auto'} color={'#f640fe8f'}>
+            Please connect wallet.
+          </TEXT.BoldHeader1>
+        </Content>
       )}
     </Container>
   )
