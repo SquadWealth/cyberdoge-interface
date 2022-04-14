@@ -48,7 +48,7 @@ const TwitterLink = styled(StyledLink)`
 `
 
 const OpenSeaLink = styled(StyledLink)`
-  color: #f2f2f2;
+  color: white;
 `
 
 const CustomArtwork = styled.div`

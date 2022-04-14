@@ -36,7 +36,7 @@ const MintButton = styled.button`
 `
 
 const OpenSeaLink = styled(StyledLink)`
-  color: #f2f2f2;
+  color: white;
 `
 
 export function Mint() {
