@@ -67,11 +67,11 @@ export function Home() {
         <Title>CYBERDOGES</Title>
         <TEXT.SmallBody m={'4px auto'}>
           Created by &nbsp;
-          <TwitterLink href={'https://twitter.com/paintedbynarz'}>narz.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/paintedbynarz'} target="_blank">narz.eth</TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/misteropm_eth'}>misteropm.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/misteropm_eth'} target="_blank">misteropm.eth</TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/8igboydiamonds'}>bigboydiamonds.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/8igboydiamonds'} target="_blank">bigboydiamonds.eth</TwitterLink>
         </TEXT.SmallBody>
         <ExternalButton>
           <OpenSeaLink href={'https://opensea.io/collection/cyber-doges'}>View on OpenSea</OpenSeaLink>
