@@ -8,7 +8,7 @@ export function useMintCallback(tokenId?: BigNumberish): any {
   const [{ data: accountData }] = useAccount()
 
   const contract = useContract({
-    addressOrName: '0x83aB569F0235456f91f5e60E02Ee98b04b3beD07',
+    addressOrName: '0x851a3954074473b6fAFb5C2717D3C01094CC2698',
     contractInterface: CyberDoge_ABI,
     signerOrProvider: signerData,
   })
@@ -18,11 +18,11 @@ export function useMintCallback(tokenId?: BigNumberish): any {
       callback: async function onClaim(): Promise<any> {
         if (tokenId === '' || !tokenId || !contract || !signerData) return
 
-        console.log('tokenId: ', tokenId)
+        // console.log('tokenId: ', tokenId)
         return await contract
           ._mint()
           .then((response: any) => {
-            console.log('useMintCallback response: ', response)
+            // console.log('useMintCallback response: ', response)
             return response.hash
           })
           .catch((error: any) => {

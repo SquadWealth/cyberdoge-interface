@@ -6,7 +6,7 @@ export function useWalletClaimable(accountAddress?: string): any {
   const [{ data: signerData, error: signerError, loading: signerLoading }, getSigner] = useSigner()
   const [{ data: blockNumber, error, loading }, getBlockNumber] = useBlockNumber({ watch: true })
   const contract = useContract({
-    addressOrName: '0x83aB569F0235456f91f5e60E02Ee98b04b3beD07',
+    addressOrName: '0x851a3954074473b6fAFb5C2717D3C01094CC2698',
     contractInterface: CyberDoge_ABI,
     signerOrProvider: signerData,
   })
