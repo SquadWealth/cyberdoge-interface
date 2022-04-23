@@ -22,7 +22,7 @@ export function useWalletClaimable(accountAddress?: string): any {
           setClaimable(response.toNumber())
         })
         .catch((error: any) => {
-          console.log(error)
+          console.log("useWalletClaimable error:", error)
         })
     })()
   }, [contract, accountAddress, signerData, blockNumber])
