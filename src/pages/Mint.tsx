@@ -81,16 +81,16 @@ export function Mint() {
 
   return (
     <Container>
-      {claimable === undefined && accountData && <Content>Checking for doges to adopt...</Content>}
-      {claimable === null && accountData && <Content>You have no doge available to adopt.</Content>}
-      {claimable && accountData && (
+      {canClaim === undefined && accountData && <Content>Checking for doges to adopt...</Content>}
+      {canClaim === false && accountData && <Content>You have no doge available to adopt.</Content>}
+      {canClaim && accountData && (
         <Content>
           <TEXT.StandardBody m={'auto auto 0 auto'}>You have 1 doge available to adopt. Aroo!</TEXT.StandardBody>
           {attemptingTransaction && <MintButton>Processing adoption...</MintButton>}
           {transactionHash !== undefined && (
             <MintButton>
               <OpenSeaLink href={'https://opensea.io/collection/cyberdoge-by-narz'}>
-                #{claimable} Adopted! View on OpenSea.
+                CyberDoge Adopted! View on OpenSea.
               </OpenSeaLink>
             </MintButton>
           )}

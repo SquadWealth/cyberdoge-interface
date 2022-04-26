@@ -2,7 +2,7 @@ import { useMemo, useEffect, useState } from 'react';
 import { useSigner, useContract, useBlockNumber } from 'wagmi';
 import CyberDoge_ABI from '../constants/abis/CyberDoge.json';
 
-export function useWalletClaimable(accountAddress?: string): boolean | null {
+export function useWalletClaimable(accountAddress?: string): boolean | undefined {
   const [{ data: signerData }] = useSigner();
   const [{ data: blockNumber }] = useBlockNumber({ watch: true });
   const contract = useContract({
@@ -27,6 +27,6 @@ export function useWalletClaimable(accountAddress?: string): boolean | null {
   }, [contract, accountAddress, signerData, blockNumber]);
 
   return useMemo(() => {
-    return claimable ? claimable : null;
+    return claimable;
   }, [claimable]);
 }
