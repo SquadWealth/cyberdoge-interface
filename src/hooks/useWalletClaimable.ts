@@ -18,6 +18,7 @@ export function useWalletClaimable(accountAddress?: string): boolean | undefined
       await contract
         .walletClaimable(accountAddress)
         .then((response: any) => {
+          console.log('response: ', response);
           setClaimable(response);
         })
         .catch((error: any) => {

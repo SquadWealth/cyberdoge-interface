@@ -41,8 +41,7 @@ const OpenSeaLink = styled(StyledLink)`
 
 export function Mint() {
   const [{ data: accountData }] = useAccount();
-  // const claimable = useWalletClaimable(accountData ? accountData.address : '')
-  const canClaim = useWalletClaimable('0xF77eE516d2f2D725e935D3Cdaa19764291D03101');
+  const canClaim = useWalletClaimable(accountData ? accountData.address : '')
   const { callback: mintCallback } = useMintCallback(canClaim ? canClaim : false);
 
   const [{ attemptingTransaction, transactionErrorMessage, transactionHash }, setMintState] = useState<{
