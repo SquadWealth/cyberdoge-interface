@@ -3,9 +3,8 @@ import { BigNumberish } from 'ethers'
 import { useSigner, useContract, useBlockNumber, useAccount } from 'wagmi'
 import CyberDoge_ABI from '../constants/abis/CyberDoge.json'
 
-export function useMintCallback(tokenId?: BigNumberish): any {
-  const [{ data: signerData, error: signerError, loading: signerLoading }, getSigner] = useSigner()
-  const [{ data: accountData }] = useAccount()
+export function useMintCallback(canClaim?: boolean | undefined): any {
+  const [{ data: signerData }] = useSigner()
 
   const contract = useContract({
     addressOrName: '0x851a3954074473b6fAFb5C2717D3C01094CC2698',
@@ -16,13 +15,11 @@ export function useMintCallback(tokenId?: BigNumberish): any {
   return useMemo(() => {
     return {
       callback: async function onClaim(): Promise<any> {
-        if (tokenId === '' || !tokenId || !contract || !signerData) return
+        if (!canClaim || canClaim === undefined || !contract || !signerData) return
 
-        // console.log('tokenId: ', tokenId)
         return await contract
           ._mint()
           .then((response: any) => {
-            // console.log('useMintCallback response: ', response)
             return response.hash
           })
           .catch((error: any) => {
@@ -30,6 +27,5 @@ export function useMintCallback(tokenId?: BigNumberish): any {
           })
       },
     }
-    // return contract;
-  }, [tokenId, contract, signerData])
+  }, [canClaim, contract, signerData])
 }
