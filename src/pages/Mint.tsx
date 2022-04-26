@@ -1,10 +1,10 @@
-import { useState, useCallback } from 'react'
-import styled from 'styled-components'
-import { useAccount } from 'wagmi'
-import { TEXT } from '../theme/theme'
-import { useWalletClaimable } from '../hooks/useWalletClaimable'
-import { useMintCallback } from '../hooks/useMintCallback'
-import { StyledLink } from '../theme/components'
+import { useState, useCallback } from 'react';
+import styled from 'styled-components';
+import { useAccount } from 'wagmi';
+import { TEXT } from '../theme/theme';
+import { useWalletClaimable } from '../hooks/useWalletClaimable';
+import { useMintCallback } from '../hooks/useMintCallback';
+import { StyledLink } from '../theme/components';
 
 const Container = styled.div`
   display: flex;
@@ -13,14 +13,14 @@ const Container = styled.div`
   color: black;
   height: 100vh;
   width: 100vw;
-`
+`;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
   padding-bottom: 100px;
-`
+`;
 
 const MintButton = styled.button`
   background: ${({ theme }) => theme.bg2};
@@ -33,51 +33,51 @@ const MintButton = styled.button`
   width: 300px;
   box-shadow: 0 0 5px ${({ theme }) => theme.bg2};
   margin: 24px auto auto auto;
-`
+`;
 
 const OpenSeaLink = styled(StyledLink)`
   color: white;
-`
+`;
 
 export function Mint() {
-  const [{ data: accountData }] = useAccount()
+  const [{ data: accountData }] = useAccount();
   // const claimable = useWalletClaimable(accountData ? accountData.address : '')
-  const canClaim = useWalletClaimable('0xF77eE516d2f2D725e935D3Cdaa19764291D03101')
-  const { callback: mintCallback } = useMintCallback(canClaim ? canClaim : false)
+  const canClaim = useWalletClaimable('0xF77eE516d2f2D725e935D3Cdaa19764291D03101');
+  const { callback: mintCallback } = useMintCallback(canClaim ? canClaim : false);
 
   const [{ attemptingTransaction, transactionErrorMessage, transactionHash }, setMintState] = useState<{
-    attemptingTransaction: boolean
-    transactionErrorMessage: string | undefined
-    transactionHash: undefined
+    attemptingTransaction: boolean;
+    transactionErrorMessage: string | undefined;
+    transactionHash: undefined;
   }>({
     attemptingTransaction: false,
     transactionErrorMessage: undefined,
     transactionHash: undefined,
-  })
+  });
 
   const handleMint = useCallback(() => {
-    if (!mintCallback) return
+    if (!mintCallback) return;
     setMintState({
       attemptingTransaction: true,
       transactionErrorMessage: undefined,
       transactionHash: undefined,
-    })
+    });
     mintCallback()
       .then((response: any) => {
         setMintState({
           attemptingTransaction: false,
           transactionErrorMessage: undefined,
           transactionHash: response,
-        })
+        });
       })
       .catch((error: any) => {
         setMintState({
           attemptingTransaction: false,
           transactionErrorMessage: error,
           transactionHash: undefined,
-        })
-      })
-  }, [mintCallback])
+        });
+      });
+  }, [mintCallback]);
 
   return (
     <Container>
@@ -108,5 +108,5 @@ export function Mint() {
         </Content>
       )}
     </Container>
-  )
+  );
 }

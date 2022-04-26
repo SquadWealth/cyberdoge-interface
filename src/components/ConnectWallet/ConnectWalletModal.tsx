@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react'
-import styled from 'styled-components/macro'
-import { useModalOpen, useWalletModalToggle } from '../../state/application/hooks'
-import { ApplicationModal } from '../../state/application/actions'
-import { Icon } from '../Icon/Icon'
-import { TEXT } from '../../theme/theme'
-import { useConnect, useAccount } from 'wagmi'
-import Modal from '../Modal/Modal'
-import MetaMaskLogo from '../../assets/metamask-icon.png'
+import { useState, useEffect } from 'react';
+import styled from 'styled-components/macro';
+import { useModalOpen, useWalletModalToggle } from '../../state/application/hooks';
+import { ApplicationModal } from '../../state/application/actions';
+import { Icon } from '../Icon/Icon';
+import { TEXT } from '../../theme/theme';
+import { useConnect, useAccount } from 'wagmi';
+import Modal from '../Modal/Modal';
+import MetaMaskLogo from '../../assets/metamask-icon.png';
 
 const ProviderSelectionButton = styled.button`
   display: flex;
@@ -26,39 +26,39 @@ const ProviderSelectionButton = styled.button`
       background: #f640fe8f;
     }
   `}
-`
+`;
 
 const ModalContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px;
   width: 100%;
-`
+`;
 
 const SelectionContentContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: auto;
-`
+`;
 
 const WALLET_VIEWS = {
   OPTIONS: 'options',
   OPTIONS_SECONDARY: 'options_secondary',
   ACCOUNT: 'account',
   PENDING: 'pending',
-}
+};
 
 export default function ConnectWalletModal() {
-  const [{ data: connectData, error: connectError }, connect] = useConnect()
-  const [{ data: accountData }, disconnect] = useAccount({ fetchEns: true })
-  const walletModalOpen = useModalOpen(ApplicationModal.WALLET)
-  const toggleWalletModal = useWalletModalToggle()
+  const [{ data: connectData, error: connectError }, connect] = useConnect();
+  const [{ data: accountData }, disconnect] = useAccount({ fetchEns: true });
+  const walletModalOpen = useModalOpen(ApplicationModal.WALLET);
+  const toggleWalletModal = useWalletModalToggle();
 
   useEffect(() => {
     if (accountData && walletModalOpen) {
-      toggleWalletModal()
+      toggleWalletModal();
     }
-  }, [walletModalOpen, accountData, toggleWalletModal])
+  }, [walletModalOpen, accountData, toggleWalletModal]);
 
   return (
     <Modal isOpen={walletModalOpen} onDismiss={toggleWalletModal} minHeight={false} maxHeight={90}>
@@ -82,5 +82,5 @@ export default function ConnectWalletModal() {
         ))}
       </ModalContentContainer>
     </Modal>
-  )
+  );
 }

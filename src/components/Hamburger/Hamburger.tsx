@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { bool, func } from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import { bool, func } from 'prop-types';
 
 export const StyledBurger = styled.button<{ open: boolean }>`
   position: block;
@@ -49,10 +49,10 @@ export const StyledBurger = styled.button<{ open: boolean }>`
   ${({ theme }) => theme.mediaWidth.minSmall`
     display: none;
   `};
-`
+`;
 
 const Burger = ({ open, setOpen, ...props }: { open: boolean; setOpen: Function; props?: any }) => {
-  const isExpanded = open ? true : false
+  const isExpanded = open ? true : false;
 
   return (
     <StyledBurger
@@ -66,12 +66,12 @@ const Burger = ({ open, setOpen, ...props }: { open: boolean; setOpen: Function;
       <span />
       <span />
     </StyledBurger>
-  )
-}
+  );
+};
 
 Burger.propTypes = {
   open: bool.isRequired,
   setOpen: func.isRequired,
-}
+};
 
-export default Burger
+export default Burger;

@@ -1,6 +1,5 @@
-import { useMemo, useEffect, useState } from 'react'
-import { BigNumberish } from 'ethers'
-import { useSigner, useContract, useBlockNumber, useAccount } from 'wagmi'
+import { useMemo } from 'react'
+import { useSigner, useContract } from 'wagmi'
 import CyberDoge_ABI from '../constants/abis/CyberDoge.json'
 
 export function useMintCallback(canClaim?: boolean | undefined): any {

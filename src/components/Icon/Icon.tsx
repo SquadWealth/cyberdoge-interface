@@ -1,17 +1,17 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const IconWrapper = styled.div<{
-  height?: number
-  width?: number
-  margin?: string
-  color?: string
-  transform?: string
-  clickable?: boolean
-  position?: string
-  top?: string
-  right?: string
-  left?: string
-  bottom?: string
+  height?: number;
+  width?: number;
+  margin?: string;
+  color?: string;
+  transform?: string;
+  clickable?: boolean;
+  position?: string;
+  top?: string;
+  right?: string;
+  left?: string;
+  bottom?: string;
 }>`
   display: flex;
   height: ${({ height }) => height}px;
@@ -27,7 +27,7 @@ const IconWrapper = styled.div<{
   left: ${({ left }) => left ?? left};
   bottom: ${({ bottom }) => bottom ?? bottom};
   position: ${({ position }) => (position ? position : 'auto')};
-`
+`;
 
 export const Icon = ({
   height,
@@ -44,19 +44,19 @@ export const Icon = ({
   bottom,
   position,
 }: {
-  height?: number
-  width?: number
-  margin?: string
-  children: React.ReactNode
-  color?: string
-  transform?: string
-  clickable?: boolean
-  onClick?: (event: any) => any
-  top?: string
-  right?: string
-  left?: string
-  bottom?: string
-  position?: string
+  height?: number;
+  width?: number;
+  margin?: string;
+  children: React.ReactNode;
+  color?: string;
+  transform?: string;
+  clickable?: boolean;
+  onClick?: (event: any) => any;
+  top?: string;
+  right?: string;
+  left?: string;
+  bottom?: string;
+  position?: string;
 }) => {
   return (
     <IconWrapper
@@ -75,5 +75,5 @@ export const Icon = ({
     >
       {children}
     </IconWrapper>
-  )
-}
+  );
+};

@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import House_Background from '../assets/house.png'
-import { StyledLink } from '../theme/components'
-import { TEXT } from '../theme/theme'
+import styled from 'styled-components';
+import House_Background from '../assets/house.png';
+import { StyledLink } from '../theme/components';
+import { TEXT } from '../theme/theme';
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   margin: auto auto auto auto;
   flex: 1;
-`
+`;
 
 const Window = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const Window = styled.div`
   ${({ theme }) => theme.mediaWidth.minSmall`
     margin: 200px auto auto auto;
   `};
-`
+`;
 
 const ExternalButton = styled.button`
   background: ${({ theme }) => theme.bg2};
@@ -33,7 +33,7 @@ const ExternalButton = styled.button`
   font-size: 18px;
   cursor: pointer;
   margin: 12px auto;
-`
+`;
 
 const Title = styled.div`
   font-size: 48px;
@@ -41,15 +41,15 @@ const Title = styled.div`
   color: ${({ theme }) => theme.text1};
   letter-spacing: 3px;
   cursor: ;
-`
+`;
 
 const TwitterLink = styled(StyledLink)`
   color: ${({ theme }) => theme.text1};
-`
+`;
 
 const OpenSeaLink = styled(StyledLink)`
   color: white;
-`
+`;
 
 const CustomArtwork = styled.div`
   height: 200px;
@@ -58,7 +58,7 @@ const CustomArtwork = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
-`
+`;
 
 export function Home() {
   return (
@@ -67,11 +67,17 @@ export function Home() {
         <Title>CYBERDOGES</Title>
         <TEXT.SmallBody m={'4px auto'}>
           Created by &nbsp;
-          <TwitterLink href={'https://twitter.com/paintedbynarz'} target="_blank">narz.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/paintedbynarz'} target="_blank">
+            narz.eth
+          </TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/misteropm_eth'} target="_blank">misteropm.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/misteropm_eth'} target="_blank">
+            misteropm.eth
+          </TwitterLink>
           ,&nbsp;
-          <TwitterLink href={'https://twitter.com/8igboydiamonds'} target="_blank">bigboydiamonds.eth</TwitterLink>
+          <TwitterLink href={'https://twitter.com/8igboydiamonds'} target="_blank">
+            bigboydiamonds.eth
+          </TwitterLink>
         </TEXT.SmallBody>
         <ExternalButton>
           <OpenSeaLink href={'https://opensea.io/collection/cyberdoge-by-narz'}>View on OpenSea</OpenSeaLink>
@@ -79,5 +85,5 @@ export function Home() {
         <CustomArtwork />
       </Window>
     </Container>
-  )
+  );
 }
