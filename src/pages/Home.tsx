@@ -43,6 +43,22 @@ const Title = styled.div`
   cursor: ;
 `;
 
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 4px auto;
+  font-size: 14px;
+  text-align: center;
+
+  ${({theme}) => theme.mediaWidth.minSmall`
+    flex-direction: row;
+  `}
+`
+
+const LinkContainer = styled.div`
+  display: flex;
+`
+
 const TwitterLink = styled(StyledLink)`
   color: ${({ theme }) => theme.text1};
 `;
@@ -65,8 +81,10 @@ export function Home() {
     <Container>
       <Window>
         <Title>CYBERDOGES</Title>
-        <TEXT.SmallBody m={'4px auto'}>
-          Created by &nbsp;
+        <ContentContainer>
+          Created by
+        <LinkContainer>
+           &nbsp;
           <TwitterLink href={'https://twitter.com/paintedbynarz'} target="_blank">
             narz.eth
           </TwitterLink>
@@ -78,7 +96,8 @@ export function Home() {
           <TwitterLink href={'https://twitter.com/8igboydiamonds'} target="_blank">
             bigboydiamonds.eth
           </TwitterLink>
-        </TEXT.SmallBody>
+        </LinkContainer>
+        </ContentContainer>
         <ExternalButton>
           <OpenSeaLink href={'https://opensea.io/collection/cyberdoge-by-narz'}>View on OpenSea</OpenSeaLink>
         </ExternalButton>
